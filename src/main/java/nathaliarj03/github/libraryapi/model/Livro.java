@@ -16,7 +16,8 @@ import java.util.UUID;
 @Data
 
 
-@AllArgsConstructor // CONSTRUTOR COM TODOS OS ARGUMENTOS.
+
+//@AllArgsConstructor // CONSTRUTOR COM TODOS OS ARGUMENTOS.
 public class Livro {
 
     @Id
@@ -41,12 +42,8 @@ public class Livro {
     private BigDecimal preco;
 
     //TIPO DE RELACIONAMENTO
-    @ManyToOne  // UM AUTOR PODE TER UM OU MAIS DE UM LIVROS. (MUITOS PARA UM (AUTOR))
+    @ManyToOne //(cascade = CascadeType.ALL) // UM AUTOR PODE TER UM OU MAIS DE UM LIVROS. (MUITOS PARA UM (AUTOR))
     @JoinColumn(name = "id_autor")
     private Autor autor;
-
-
-
-
 
 }
